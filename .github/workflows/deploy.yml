@@ -24,4 +24,4 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/.vitepress/dist
-          token: ${{ WEB_DOCS }}
+          token: ${{ secrets.WEB_DOCS }}
