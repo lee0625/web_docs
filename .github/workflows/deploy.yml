@@ -20,14 +20,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.12.1
-      - run: node --version
       - run: npm install
       - name: Build
         run: npm run docs:build
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:
-          name: docs
           path: docs/.vitepress/dist
       - name: Deploy
         id: deployment
