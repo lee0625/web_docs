@@ -1,34 +1,33 @@
-name: web_docs
-
+name: Deploy
 on:
+  workflow_dispatch: {}
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build website
-        run: npm run docs:build
-
-      - name: web_docs
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+      - uses: actions/checkout@v3
         with:
-          branch: gh-pages
-          folder: docs/.vitepress/dist
-          token: ${{ secrets.WEB_DOCS }}
-      - name: Debug
-        run: |
-          env
-          git config --global user.name "Your Name"
-          git config --global user.email "youremail@example.com"
-          git remote -v
-          git branch -a
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm ci
+      - name: Build
+        run: npm run docs:build
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/.vitepress/dist
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1
