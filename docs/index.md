@@ -21,8 +21,8 @@ hero:
 
 features:
   - icon: 💡
-    title: Vue3组件库
-    details: 基于vite打包和TypeScript开发
+    title: 全栈笔记
+    details: 脑洞的记录
   - icon: 📦
     title: 仅供学习使用
     details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
