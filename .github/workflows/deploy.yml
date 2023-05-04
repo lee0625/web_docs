@@ -1,4 +1,4 @@
-name: Deploy Website
+name: web_docs
 
 on:
   push:
