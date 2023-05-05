@@ -16,8 +16,8 @@ hero:
       text: 开始
       link: /guide/
     - theme: alt
-      text: 在 Gitee 上查看
-      link: https://gitee.com/geeksdidi/kittyui
+      text: 在 GitHub 上查看
+      link: https://github.com/lee0625/web_docs
 
 features:
   - icon: 💡

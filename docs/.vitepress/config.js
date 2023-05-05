@@ -2,52 +2,41 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-04-28 16:10:56
- * @LastEditTime: 2023-05-04 18:46:49
+ * @LastEditTime: 2023-05-05 11:09:31
  * @LastEditors: fanwei
  */
+import {nav, head, sidebar, algolia } from './configs'
 export default {
-    title: '码客笔记',
-    base: '/web_docs/',
-    description: 'Vue 3.x',
+    title: '码客笔记', // 标题
+    base: '/web_docs/', // 默认'/'
+    description: 'Vue 3.x', // 描述
+    lang: 'zh-CN', // 语言
+    lastUpdated: true, // 更新时间
+    head, // 头部信息
     themeConfig: {
         logo: '/logo.png',
+
         search: {
             provider: 'local',
             placeholder: '搜索',
-            background: '#fff',
+        },
 
-        },
+        /* Algolia DocSearch 配置 */
+        // algolia,
+
+        lastUpdatedText: '最后更新时间', // 更新时间
         outlineTitle: '目录',
-        lastUpdated: true,
-        sidebar: {
-            '/guide/': [
-                {
-                    text: '开始导航',
-                    collapsed: false,
-                    items: [
-                        { text: '首页', link: '/' },
-                      ]
-                }
-            ]
-        },
-        nav: [
-            {
-                text: '首页',
-                link: '/'
-            },
-            {
-                text: '服务端',
-                items: [
-                    {
-                        text: 'Linux',
-                        link: '/serve/Linux'
-                    }
-                ]
-            },
-            {
-                text: '关于',
-                link: '/about'
-            }
-        ]
+        returnToTopLabel: '返回顶部',
+
+        sidebar,
+        nav,
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/lee0625/web_docs' },
+        ], // 友链
+        
+        docFooter: {
+            prev: '上一篇',
+            next: '下一篇',
+        }
     }
 }
