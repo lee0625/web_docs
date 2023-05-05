@@ -1,10 +1,3 @@
-<!--
- * @modlue: 
- * @Author: fanwei
- * @Date: 2023-04-28 16:21:54
- * @LastEditTime: 2023-04-28 16:37:01
- * @LastEditors: fanwei
--->
 # Linux速查宝典
 
 ## 常用命令行操作

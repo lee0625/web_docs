@@ -2,7 +2,7 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-04-28 16:10:56
- * @LastEditTime: 2023-05-05 11:09:31
+ * @LastEditTime: 2023-05-05 18:34:00
  * @LastEditors: fanwei
  */
 import {nav, head, sidebar, algolia } from './configs'
