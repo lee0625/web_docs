@@ -2,7 +2,7 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-06 16:12:40
+ * @LastEditTime: 2023-05-06 18:42:43
  * @LastEditors: fanwei
  */
 
@@ -36,7 +36,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         items: [
             {
                 text: 'Linux',
-                link: '/serve/Linux/'
+                link: '/serve/linux/'
             }
         ]
     },
