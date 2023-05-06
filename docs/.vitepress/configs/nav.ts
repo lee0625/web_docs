@@ -2,7 +2,7 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-05 18:32:03
+ * @LastEditTime: 2023-05-06 16:12:40
  * @LastEditors: fanwei
  */
 
@@ -37,6 +37,15 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: 'Linux',
                 link: '/serve/Linux/'
+            }
+        ]
+    },
+    {
+        text: '倍速工具箱',
+        items: [
+            {
+                text: '前端常用工具函数',
+                link: '/uts/javaScript'
             }
         ]
     },
