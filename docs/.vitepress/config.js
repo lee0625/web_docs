@@ -2,18 +2,20 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-04-28 16:10:56
- * @LastEditTime: 2023-05-05 18:34:00
+ * @LastEditTime: 2023-05-09 15:38:04
  * @LastEditors: fanwei
  */
 import {nav, head, sidebar, algolia } from './configs'
 export default {
     title: '码客笔记', // 标题
-    base: '/web_docs/', // 默认'/'
+    // base: '/web_docs/', // 默认'/'
     description: 'Vue 3.x', // 描述
     lang: 'zh-CN', // 语言
     lastUpdated: true, // 更新时间
     head, // 头部信息
     themeConfig: {
+        
+
         logo: '/logo.png',
 
         search: {
