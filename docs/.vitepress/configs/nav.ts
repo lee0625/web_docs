@@ -2,7 +2,7 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-09 16:51:19
+ * @LastEditTime: 2023-05-09 20:25:45
  * @LastEditors: fanwei
  */
 
@@ -56,6 +56,10 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: '前端常用工具函数',
                 link: '/uts/javaScript'
+            },
+            {
+                text: 'git工具',
+                link: '/uts/git'
             }
         ]
     },
