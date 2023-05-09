@@ -1,8 +1,8 @@
 /*
- * @modlue: 
+ * @modlue:
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-09 16:51:19
+ * @LastEditTime: 2023-05-09 20:25:45
  * @LastEditors: fanwei
  */
 
@@ -16,10 +16,10 @@ const parentDir = path.resolve(currentDir, '../..');
 
 const files = fs.readdirSync(parentDir);
 for (const file of files) {
-    
+
     const filePath = path.join(parentDir, file);
     const stats = fs.statSync(filePath);
-  
+
     if (stats.isDirectory()) {
       console.log(`${file}`);
     } else {
@@ -38,6 +38,10 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: 'javaScript',
                 link: '/web/javaScript/'
+            },
+            {
+                text: 'vue',
+                link: '/web/vue/vue'
             }
         ]
     },
@@ -56,6 +60,19 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: '前端常用工具函数',
                 link: '/uts/javaScript'
+            },
+            {
+                text: 'git工具',
+                link: '/uts/git'
+            }
+        ]
+    },
+    {
+        text: '题库宝典',
+        items: [
+            {
+                text: '前端阁',
+                link: '/interview/web'
             }
         ]
     },

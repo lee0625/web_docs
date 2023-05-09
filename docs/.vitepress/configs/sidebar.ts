@@ -1,8 +1,8 @@
 /*
- * @modlue: 
+ * @modlue:
  * @Author: fanwei
  * @Date: 2023-05-05 10:56:04
- * @LastEditTime: 2023-05-09 14:56:33
+ * @LastEditTime: 2023-05-09 20:26:10
  * @LastEditors: fanwei
  */
 
@@ -18,6 +18,21 @@ export const sidebar: DefaultTheme.Config['sidebar'] =  {
               ]
         },
     ],
+    '/web/': [
+        {
+            text: '前端知识库',
+            collapsed: false,
+            items: [
+                { text: 'javaScript', link: '/web/javaScript/' },
+                { text: 'vue', collapsed: false,
+                    items: [
+                        { text: 'vue', link: '/web/vue/vue' },
+                        { text: 'vue3', link: '/web/vue/vue3' },
+                    ]
+                }
+            ]
+        }
+    ],
     '/serve/': [
         {
             text: '服务端相关',
@@ -32,7 +47,17 @@ export const sidebar: DefaultTheme.Config['sidebar'] =  {
             text:  "倍速工具箱",
             collapsed: false,
             items: [
-                {text: '前端常用工具函数', link: '/uts/javaScript'}
+                {text: '前端常用工具函数', link: '/uts/javaScript'},
+                {text: 'git工具', link: '/uts/get'}
+            ]
+        }
+    ],
+    '/interview/': [
+        {
+            text: '题库宝典',
+            collapsed: false,
+            items: [
+                {text: '前端阁', link: '/interview/web'},
             ]
         }
     ]
