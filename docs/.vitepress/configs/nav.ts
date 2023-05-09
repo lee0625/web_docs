@@ -2,20 +2,30 @@
  * @modlue: 
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-06 18:42:43
+ * @LastEditTime: 2023-05-09 16:51:19
  * @LastEditors: fanwei
  */
 
 import { DefaultTheme } from 'vitepress'
 
-// async function loadNavModules() {
-//     const modules = await import.meta.glob('./nav/*.ts')
+const fs = require('fs');
+const path = require('path');
+
+const currentDir = __dirname;
+const parentDir = path.resolve(currentDir, '../..');
+
+const files = fs.readdirSync(parentDir);
+for (const file of files) {
+    
+    const filePath = path.join(parentDir, file);
+    const stats = fs.statSync(filePath);
   
-//     for (const path in modules) {
-//       const module = await modules[path]()
-//       console.log(`${path}:`, module.nav)
-//     }
-//   }
+    if (stats.isDirectory()) {
+      console.log(`${file}`);
+    } else {
+    //   console.log(`${filePath} is a file.`);
+    }
+  }
 
 export const nav: DefaultTheme.Config['nav'] = [
     {
