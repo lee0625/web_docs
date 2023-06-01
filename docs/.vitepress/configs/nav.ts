@@ -2,7 +2,7 @@
  * @modlue:
  * @Author: fanwei
  * @Date: 2023-05-05 10:26:13
- * @LastEditTime: 2023-05-09 20:25:45
+ * @LastEditTime: 2023-06-02 00:24:59
  * @LastEditors: fanwei
  */
 
@@ -64,7 +64,6 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: 'git工具',
                 link: '/uts/git'
-<<<<<<< HEAD
             }
         ]
     },
@@ -74,8 +73,6 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: '前端阁',
                 link: '/interview/web'
-=======
->>>>>>> d8c7560df83df78a1cd271fe7126cddb34ff9dce
             }
         ]
     },
