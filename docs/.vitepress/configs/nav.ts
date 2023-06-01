@@ -64,6 +64,7 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: 'git工具',
                 link: '/uts/git'
+<<<<<<< HEAD
             }
         ]
     },
@@ -73,6 +74,8 @@ export const nav: DefaultTheme.Config['nav'] = [
             {
                 text: '前端阁',
                 link: '/interview/web'
+=======
+>>>>>>> d8c7560df83df78a1cd271fe7126cddb34ff9dce
             }
         ]
     },
