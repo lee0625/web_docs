@@ -688,7 +688,7 @@ const flattenTree = (tree, childrenField = 'children') => {
   function flatten(node) {
     const { [childrenField]: children, ...rest } = node;
     result.push(rest);
-    
+    if(!children) return;
     for (const child of children) {
       flatten(child);
     }
