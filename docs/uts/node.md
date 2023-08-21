@@ -12,6 +12,7 @@
 ### 方法
 
 ```javascript
+const fs = require("fs");
 /**
  * 生成文件树结构
  * @param {string} rootPath - 根目录路径
@@ -52,9 +53,8 @@ function generateTree(rootPath, padding = "", level = 0, excludeFiles = []) {
 ### 示例
 
 ```javascript
-const fs = require("fs");
-
 // 生成根目录下的文件树结构，层级深度为2，排除名为"exclude.txt"的文件
-generateTree("./root", "", 2, ["exclude.txt"]);
+const excludeFiles = ["node_modules", ".yalc", "yarn.lock", ".git", ".vscode", "package-lock.json"]
+generateTree("./", "", 2, excludeFiles);
 ```
 
