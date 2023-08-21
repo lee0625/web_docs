@@ -2,7 +2,7 @@
  * @modlue:
  * @Author: fanwei
  * @Date: 2023-05-05 10:56:04
- * @LastEditTime: 2023-06-02 00:25:18
+ * @LastEditTime: 2023-08-21 13:02:18
  * @LastEditors: fanwei
  */
 
@@ -48,7 +48,8 @@ export const sidebar: DefaultTheme.Config['sidebar'] =  {
             collapsed: false,
             items: [
                 {text: '前端常用工具函数', link: '/uts/javaScript'},
-                {text: 'git工具', link: '/uts/get'}
+                {text: 'git工具', link: '/uts/get'},
+                {text: 'Node实战', link: '/uts/node'},
             ]
         }
     ],
