@@ -716,3 +716,116 @@ const randomInt = (min, max) => {
 }
 ```
 
+## 获取元素的盒子尺寸
+
+**参数：**
+
+- `options` 选项对象
+  - `className` 元素的类名
+  - `includePadding` 是否包含内边距，默认为 `true`
+  - `includeBorder` 是否包含边框，默认为 `true`
+  - `includeMargin` 是否包含外边距，默认为 `false`
+  - `getContentSize` 是否获取内容尺寸，默认为 `false`
+
+**返回值：**
+
+- 包含宽度和高度的对象
+
+```javascript
+export const getBoxSize = ({
+    className,
+    includePadding = true,
+    includeBorder = true,
+    includeMargin = false,
+    getContentSize = false
+}) => {
+    if (!className) return { width: 0, height: 0 }
+    const tablePageEl = document.querySelector(className)
+    const tablePageStyle = window.getComputedStyle(tablePageEl)
+    const boxSizing = tablePageStyle.getPropertyValue('box-sizing')
+    const width = parseInt(tablePageStyle.getPropertyValue('width'))
+    const height = parseInt(tablePageStyle.getPropertyValue('height'))
+    let paddingTop = 0
+    let paddingBottom = 0
+    let paddingLeft = 0
+    let paddingRight = 0
+    let borderTop = 0
+    let borderBottom = 0
+    let borderLeft = 0
+    let borderRight = 0
+    let marginTop = 0
+    let marginBottom = 0
+    let marginLeft = 0
+    let marginRight = 0
+    if (includePadding) {
+        paddingTop = parseInt(tablePageStyle.getPropertyValue('padding-top'))
+        paddingBottom = parseInt(tablePageStyle.getPropertyValue('padding-bottom'))
+        paddingLeft = parseInt(tablePageStyle.getPropertyValue('padding-left'))
+        paddingRight = parseInt(tablePageStyle.getPropertyValue('padding-right'))
+    }
+    if (includeBorder) {
+        borderTop = parseInt(tablePageStyle.getPropertyValue('border-top-width'))
+        borderBottom = parseInt(tablePageStyle.getPropertyValue('border-bottom-width'))
+        borderLeft = parseInt(tablePageStyle.getPropertyValue('border-left-width'))
+        borderRight = parseInt(tablePageStyle.getPropertyValue('border-right-width'))
+    }
+    if (includeMargin) {
+        marginTop = parseInt(tablePageStyle.getPropertyValue('margin-top'))
+        marginBottom = parseInt(tablePageStyle.getPropertyValue('margin-bottom'))
+        marginLeft = parseInt(tablePageStyle.getPropertyValue('margin-left'))
+        marginRight = parseInt(tablePageStyle.getPropertyValue('margin-right'))
+    }
+    let contentWidth = 0
+    let contentHeight = 0
+    if (getContentSize) {
+        if (boxSizing === 'border-box') {
+            contentWidth = tablePageEl.clientWidth - borderLeft - borderRight
+            contentHeight = tablePageEl.clientHeight - borderTop - borderBottom
+        } else {
+            contentWidth = tablePageEl.clientWidth + paddingLeft + paddingRight
+            contentHeight = tablePageEl.clientHeight + paddingTop + paddingBottom
+        }
+    }
+    const boxWidth =
+        width +
+        (includePadding ? paddingLeft + paddingRight : 0) +
+        (includeBorder ? borderLeft + borderRight : 0) +
+        (includeMargin ? marginLeft + marginRight : 0)
+    const boxHeight =
+        height +
+        (includePadding ? paddingTop + paddingBottom : 0) +
+        (includeBorder ? borderTop + borderBottom : 0) +
+        (includeMargin ? marginTop + marginBottom : 0)
+    return {
+        width: getContentSize ? contentWidth : boxWidth,
+        height: getContentSize ? contentHeight : boxHeight
+    }
+}
+```
+
+## 获取容器的X轴和Y轴内边距之和
+
+**参数：**
+
+- `className` 容器的类名
+
+**返回值：**
+
+- 包含容器的上下内边距之和和左右内边距之和的对象
+
+```javascript
+export const getBoxPadding = (className) => {
+    // 如果没有传递类名，则返回0
+    if (!className) return { x: 0, y: 0 }
+    // 获取容器元素
+    const tablePageEl = document.querySelector(className)
+    // 获取容器元素的样式
+    const tablePageStyle = window.getComputedStyle(tablePageEl)
+    // 获取容器元素的上下内边距和左右内边距
+    const paddingTop = parseInt(tablePageStyle.getPropertyValue('padding-top'))
+    const paddingBottom = parseInt(tablePageStyle.getPropertyValue('padding-bottom'))
+    const paddingLeft = parseInt(tablePageStyle.getPropertyValue('padding-left'))
+    const paddingRight = parseInt(tablePageStyle.getPropertyValue('padding-right'))
+    // 返回包含容器的上下内边距之和和左右内边距之和的对象
+    return { x: paddingLeft + paddingRight, y: paddingTop + paddingBottom }
+}
